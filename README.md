@@ -1,1 +1,1 @@
-Homework Assignments\n
+Homework Assignments

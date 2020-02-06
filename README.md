@@ -1,2 +1,1 @@
-Homework Assignments
-\nassn01.sh
+Homework Assignments\n

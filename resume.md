@@ -56,16 +56,16 @@ Bank of Nova Scotia, Roseau, Commonwealth of Dominica
 
 ### Leadership
 ---
-* Founding Vice President, Alpha Eta Mu Beta, National Biomedical Engineering Honor Society, University of Arkansas Chapter  
+* **Founding Vice President**, Alpha Eta Mu Beta, National Biomedical Engineering Honor Society, University of Arkansas Chapter  
 *November 2017 - May 2018*
   * Corresponded with other elected officers, communicate information to members, and assist in leading meetings and outreach activities 
-* Design Project Coordinator, Engineering World Health, University of Arkansas  
+* **Design Project Coordinator**, Engineering World Health, University of Arkansas  
 *May 2017 - April 2018*
   * Assisted design groups in registering and taking part in the EWH design competition
-* Vision Team Officer, InterVarsity Christian Fellowship, University of Arkansas  
+* **Vision Team Officer**, InterVarsity Christian Fellowship, University of Arkansas  
 *May 2017 - April 2018*
   * Assisted in planning and executing of Bible study sessions and other fellowship activities
-* Secretary, Caribbean Students Association, University of Arkansas  
+* **Secretary**, Caribbean Students Association, University of Arkansas  
 *May 2016 - April 2017*
   * Recorded and distributed meeting minutes, and assisted in planning meetings and activities
 

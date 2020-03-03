@@ -1,0 +1,5 @@
+The raw score and bit score do not depend on the size of the database,
+ and remained relatively the same when searching in databases of increasing size.
+
+The E-value increases with an increase in the size of the database, increasing the randomness of the match and possibly
+less significant.

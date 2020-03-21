@@ -7,5 +7,5 @@
    * gene_trees
 4. assn04
    * BLAST
-5. parse.py
+5. parseGFF.py
    * parse watermelon.gff file

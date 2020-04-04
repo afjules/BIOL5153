@@ -9,3 +9,5 @@
    * BLAST
 5. parseGFF.py
    * parse watermelon.gff file
+6. parseGFF.py
+   * argparse and csv modules added

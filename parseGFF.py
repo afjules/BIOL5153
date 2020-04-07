@@ -1,49 +1,57 @@
 # /usr/bin/env python3
 
 # import modules
-import csv
 import argparse
+import csv
+from Bio import SeqIO
 
 # create an argument parser object
-parser = argparse.ArgumentParser(description = "This script parses a GFF file and opens a FASTA file")
+parser = argparse.ArgumentParser(description = "This script parses a GFF file, extracts CDS features from a corresponding FASTA file, and calculates the GC content of the substrings")
 
 # add positional arguments
-parser.add_argument('filename', help='Enter the name of the GFF file')
-parser.add_argument('filename2', help='Enter the name of the corresponding genome file')
+parser.add_argument("gff", help = "Name of the GFF file")
+parser.add_argument("fasta", help = "Name of the FASTA file")
+
+# parse the arguments
 args = parser.parse_args()
 
-# initialize list for gene names
+# read and parse the FASTA file
+genome = SeqIO.read(args.fasta,'fasta')
+
 gene_list = []
 
-# open input files
-with open(args.filename) as gff:
-	with open(args.filename2) as fasta:
+# open input file
+with open(args.gff,'r') as gff_file:
+	with open(args.fasta,'r') as fasta_file:
+ 
+		# create a csv reader object
+		reader = csv.reader(gff_file, delimiter="\t")
 
-		# read GFF file, line by line
-		for line in gff:
-
-			# create a csv reader object
-			reader = csv.reader(gff, delimiter="\t")
-	
-			for line in reader:
+		for line in reader:
+			# skip empty lines
+			if not line:
+				continue
 				
-				# split fields
-				fields = line[8].split(";")
+			else:
+				# test whether this is a CDS feature
+				if (line[2]=="CDS"):
+					start = int(line[3])
+					end = int(line[4])
+					gene_list.append(genome.seq[start:end])
 
-				# extract the first item from split fields
-				gene_fields = fields[0].split("Gene ")
-				genes_split = gene_fields[1].split()
-				
-				if (genes_split[0] == "similar"):   
-					pass   # skip all 'similar to' entries
-		
-				else:
-					gene_list.append(genes_split[0])  # store gene name
-	
-		# print genes in alphabetical order			
-		for gene in sorted(gene_list):
-			print(gene)
+# calculate and print the GC content of the substring to 2 decimal places
+def get_gc_content(gene_list):   
+    length = len(gene_list)
+    g_count = gene_list.upper().count('G')
+    c_count = gene_list.upper().count('C') 
+    gc_content = (g_count + c_count) / length
+    return round(gc_content, 2)
 
-# close files
-gff.close()
-fasta.close()
+
+for i in gene_list:
+
+	print("GC content of substring = " + str(get_gc_content(i)))
+					
+# close the files
+gff_file.close()
+fasta_file.close()

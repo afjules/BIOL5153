@@ -11,3 +11,4 @@
    * parse watermelon.gff file
 6. parseGFF.py
    * argparse and csv modules added
+   * extract CDS feature and calculate GC content

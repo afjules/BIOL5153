@@ -15,3 +15,6 @@
    * extract CDS feature and calculate GC content
 8. assn08.py
    * Where's Katharine?
+9. parseGFF.py
+   * calculate reverse complement for each sequence on the '-' strand
+   * store numeric order and exon sequences in a data structure
